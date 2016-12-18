@@ -2,6 +2,7 @@ package no.difi.vefa.validator.util;
 
 import com.typesafe.config.Config;
 import no.difi.vefa.validator.api.*;
+import no.difi.vefa.validator.lang.ValidatorException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

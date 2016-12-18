@@ -1,6 +1,7 @@
 package no.difi.vefa.validator;
 
 import no.difi.vefa.validator.api.*;
+import no.difi.vefa.validator.lang.ValidatorException;
 import no.difi.vefa.validator.source.RepositorySource;
 import no.difi.vefa.validator.util.DeclarationDetector;
 import no.difi.xsd.vefa.validator._1.Configurations;

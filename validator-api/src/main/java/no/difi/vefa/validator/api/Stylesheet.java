@@ -1,4 +1,4 @@
 package no.difi.vefa.validator.api;
 
-public interface Stylesheet {
+public interface Stylesheet extends Artifact {
 }

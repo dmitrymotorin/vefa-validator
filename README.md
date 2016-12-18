@@ -9,7 +9,7 @@
 ## Features
 
 * **Very easy to use.**
-* **[Much](https://github.com/difi/vefa-validator/blob/master/doc/test_performance_001.md) [faster](https://github.com/difi/vefa-validator/blob/master/doc/test_performance_002.md)** than the old validator.
+* **Much faster** than the old validator.
 * Supports **rendering documents**.
 * Very **low footprint** in your code.
 * **Pooling** of resources.

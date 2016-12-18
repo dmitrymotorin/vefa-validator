@@ -3,7 +3,7 @@ package no.difi.vefa.validator.trigger;
 import no.difi.vefa.validator.Validator;
 import no.difi.vefa.validator.ValidatorBuilder;
 import no.difi.vefa.validator.api.Validation;
-import no.difi.vefa.validator.api.ValidatorException;
+import no.difi.vefa.validator.lang.ValidatorException;
 import no.difi.vefa.validator.plugin.AsicePlugin;
 import no.difi.vefa.validator.source.ClasspathSource;
 import no.difi.xsd.vefa.validator._1.FlagType;

@@ -2,6 +2,7 @@ package no.difi.vefa.validator.declaration;
 
 import com.google.common.io.ByteStreams;
 import no.difi.vefa.validator.api.*;
+import no.difi.vefa.validator.lang.ValidatorException;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

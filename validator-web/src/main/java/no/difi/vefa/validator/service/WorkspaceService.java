@@ -2,7 +2,7 @@ package no.difi.vefa.validator.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import no.difi.vefa.validator.api.Validation;
-import no.difi.vefa.validator.api.ValidatorException;
+import no.difi.vefa.validator.lang.ValidatorException;
 import no.difi.vefa.validator.util.JAXBHelper;
 import no.difi.xsd.vefa.validator._1.Report;
 import org.apache.commons.io.FileUtils;
@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 import javax.xml.bind.JAXBContext;
 import javax.xml.transform.stream.StreamSource;
 import java.io.*;
-import java.nio.file.Paths;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 

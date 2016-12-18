@@ -2,7 +2,7 @@ package no.difi.vefa.validator;
 
 import no.difi.vefa.validator.api.Trigger;
 import no.difi.vefa.validator.api.TriggerInfo;
-import no.difi.vefa.validator.api.ValidatorException;
+import no.difi.vefa.validator.lang.ValidatorException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

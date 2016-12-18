@@ -14,6 +14,7 @@
             <xs:element name="Stylesheet" type="StylesheetType"/>
             <xs:element name="TestFolder" type="TestFolderType"/>
         </xs:choice>
+        <xs:attribute name="build" type="xs:string"/>
         <xs:attribute name="identifier" type="xs:string"/>
         <xs:attribute name="timestamp" type="xs:long"/>
         <xs:attribute name="type" type="xs:string"/>
@@ -30,7 +31,9 @@
 
     <xs:complexType name="TestFolderType">
         <xs:simpleContent>
-            <xs:extension base="xs:string"/>
+            <xs:extension base="xs:string">
+                <xs:attribute name="extensions" type="xs:string"/>
+            </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
 
@@ -54,19 +57,23 @@
                     <xs:element name="StylesheetReference" type="StylesheetReferenceType"/>
                 </xs:choice>
             </xs:choice>
+            <xs:element name="Rule" type="RuleType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
         <xs:attribute name="identifier" type="xs:string" use="required"/>
         <xs:attribute name="build" type="xs:string" use="optional"/>
     </xs:complexType>
 
     <xs:complexType name="AbstractArtifactType" abstract="true">
-
+        <xs:sequence>
+            <xs:element name="Rule" type="RuleType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="ArtifactDefinitionType" abstract="true">
         <xs:complexContent>
             <xs:extension base="AbstractArtifactType">
                 <xs:sequence>
+                    <xs:element name="Title" type="xs:string" minOccurs="0"/>
                     <xs:element name="Parameter" type="ParameterType" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="Extension" type="ExtensionType" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
@@ -81,6 +88,9 @@
     <xs:complexType name="ArtifactReferenceType" abstract="true">
         <xs:complexContent>
             <xs:extension base="AbstractArtifactType">
+                <xs:sequence>
+                    <xs:element name="Title" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
                 <xs:attribute name="ref" type="xs:string" use="required"/>
             </xs:extension>
         </xs:complexContent>
@@ -161,5 +171,21 @@
         </xs:sequence>
         <xs:attribute name="identifier" type="xs:string"/>
     </xs:complexType>
+
+    <xs:complexType name="RuleType">
+        <xs:attribute name="identifier" type="xs:string"/>
+        <xs:attribute name="action" type="RuleActionType"/>
+    </xs:complexType>
+
+    <xs:simpleType name="RuleActionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="suppress"/>
+            <xs:enumeration value="setWarning"/>
+            <xs:enumeration value="setFutureError"/>
+            <xs:enumeration value="setError"/>
+            <xs:enumeration value="setFatal"/>
+            <xs:enumeration value="none"/>
+        </xs:restriction>
+    </xs:simpleType>
 
 </xs:schema>

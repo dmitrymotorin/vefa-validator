@@ -2,6 +2,7 @@ package no.difi.vefa.validator.renderer;
 
 import net.sf.saxon.s9api.*;
 import no.difi.vefa.validator.api.*;
+import no.difi.vefa.validator.lang.ValidatorException;
 import no.difi.vefa.validator.util.PathURIResolver;
 import no.difi.vefa.validator.util.SaxonErrorListener;
 import no.difi.xsd.vefa.validator._1.SettingType;

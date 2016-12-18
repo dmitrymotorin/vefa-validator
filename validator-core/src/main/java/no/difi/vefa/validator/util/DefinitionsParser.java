@@ -1,16 +1,29 @@
 package no.difi.vefa.validator.util;
 
-import no.difi.xsd.vefa.validator._1.Configurations;
+import net.sf.saxon.s9api.SaxonApiException;
 import no.difi.xsd.vefa.validator._2.DefinitionsType;
 
-import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
 import java.io.InputStream;
 
 public class DefinitionsParser {
 
-    private static JAXBContext jaxbContext = JAXBHelper.context(Configurations.class, DefinitionsType.class);
+    private static XsltTransformerFactory xsltTransformerFactory;
+
+    static {
+        try {
+            xsltTransformerFactory = XsltTransformerFactory.newFactory(DefinitionsType.class);
+            xsltTransformerFactory.load("v1-to-v2", DefinitionsParser.class.getResourceAsStream("/v1-to-v2.xsl"));
+        } catch (Exception e) {
+            throw new IllegalStateException(e.getMessage(), e);
+        }
+    }
 
     public static DefinitionsType parse(InputStream inputStream) {
-        return null;
+        try {
+            return xsltTransformerFactory.transform("v1-to-v2", inputStream, DefinitionsType.class);
+        } catch (SaxonApiException | JAXBException e) {
+            throw new IllegalStateException(e.getMessage(), e);
+        }
     }
 }

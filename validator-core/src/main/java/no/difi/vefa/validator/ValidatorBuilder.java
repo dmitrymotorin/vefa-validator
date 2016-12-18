@@ -3,6 +3,7 @@ package no.difi.vefa.validator;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 import no.difi.vefa.validator.api.*;
+import no.difi.vefa.validator.lang.ValidatorException;
 import no.difi.vefa.validator.plugin.*;
 import no.difi.vefa.validator.util.DeclarationDetector;
 import no.difi.xsd.vefa.validator._1.Configurations;

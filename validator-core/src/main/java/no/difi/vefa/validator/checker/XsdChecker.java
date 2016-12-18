@@ -1,6 +1,7 @@
 package no.difi.vefa.validator.checker;
 
 import no.difi.vefa.validator.api.*;
+import no.difi.vefa.validator.lang.ValidatorException;
 import no.difi.vefa.validator.util.PathLSResolveResource;
 import no.difi.xsd.vefa.validator._1.AssertionType;
 import no.difi.xsd.vefa.validator._1.FlagType;

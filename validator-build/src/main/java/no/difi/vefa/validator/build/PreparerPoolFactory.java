@@ -1,7 +1,7 @@
 package no.difi.vefa.validator.build;
 
 import com.google.common.reflect.ClassPath;
-import no.difi.vefa.validator.api.ValidatorException;
+import no.difi.vefa.validator.lang.ValidatorException;
 import no.difi.vefa.validator.api.build.Preparer;
 import no.difi.vefa.validator.api.build.PreparerInfo;
 import org.apache.commons.pool2.BaseKeyedPooledObjectFactory;

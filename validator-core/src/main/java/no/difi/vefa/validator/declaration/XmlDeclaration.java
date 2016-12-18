@@ -1,7 +1,7 @@
 package no.difi.vefa.validator.declaration;
 
 import no.difi.vefa.validator.api.Expectation;
-import no.difi.vefa.validator.api.ValidatorException;
+import no.difi.vefa.validator.lang.ValidatorException;
 import no.difi.vefa.validator.util.XmlUtils;
 
 public class XmlDeclaration extends AbstractXmlDeclaration {

@@ -1,7 +1,7 @@
 package no.difi.vefa.validator;
 
 import no.difi.vefa.validator.api.SourceInstance;
-import no.difi.vefa.validator.api.ValidatorException;
+import no.difi.vefa.validator.lang.ValidatorException;
 import no.difi.vefa.validator.lang.UnknownDocumentTypeException;
 import no.difi.vefa.validator.util.JAXBHelper;
 import no.difi.xsd.vefa.validator._1.*;

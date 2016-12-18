@@ -7,6 +7,7 @@ import no.difi.commons.schematron.jaxb.svrl.NsPrefixInAttributeValues;
 import no.difi.commons.schematron.jaxb.svrl.SchematronOutput;
 import no.difi.commons.schematron.jaxb.svrl.SuccessfulReport;
 import no.difi.vefa.validator.api.*;
+import no.difi.vefa.validator.lang.ValidatorException;
 import no.difi.vefa.validator.util.JAXBHelper;
 import no.difi.vefa.validator.util.SaxonErrorListener;
 import no.difi.xsd.vefa.validator._1.AssertionType;

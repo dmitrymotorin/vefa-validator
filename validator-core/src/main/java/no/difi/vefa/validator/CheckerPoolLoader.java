@@ -3,7 +3,7 @@ package no.difi.vefa.validator;
 import com.google.common.cache.CacheLoader;
 import no.difi.vefa.validator.api.Checker;
 import no.difi.vefa.validator.api.CheckerInfo;
-import no.difi.vefa.validator.api.ValidatorException;
+import no.difi.vefa.validator.lang.ValidatorException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

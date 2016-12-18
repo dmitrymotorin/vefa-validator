@@ -6,6 +6,7 @@ import com.google.common.io.ByteStreams;
 import no.difi.asic.AsicReader;
 import no.difi.asic.AsicReaderFactory;
 import no.difi.vefa.validator.api.*;
+import no.difi.vefa.validator.lang.ValidatorException;
 
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;

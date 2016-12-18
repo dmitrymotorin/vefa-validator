@@ -10,9 +10,18 @@
         <xsl:copy-of select="."/>
     </xsl:template>
 
-    <xsl:template match="v1:buildConfigurations">
+    <xsl:template match="v1:buildConfigurations | v1:configurations">
         <Definitions>
-            <xsl:apply-templates/>
+            <xsl:if test="@timestamp">
+                <xsl:attribute name="timestamp" select="@timestamp"/>
+            </xsl:if>
+            <xsl:if test="@build">
+                <xsl:attribute name="build" select="@build"/>
+            </xsl:if>
+            <xsl:if test="@name">
+                <xsl:attribute name="identifier" select="@name"/>
+            </xsl:if>
+            <xsl:apply-templates select="v1:package | v1:testfolder | v1:configuration"/>
         </Definitions>
     </xsl:template>
 
@@ -34,19 +43,25 @@
     <xsl:template match="v1:configuration">
         <DocumentType>
             <xsl:attribute name="identifier" select="v1:identifier"/>
-            <xsl:apply-templates/>
+            <xsl:apply-templates select="v1:title | v1:customizationId | v1:standardId | v1:declaration | v1:inherit | v1:file | v1:stylesheet | v1:rule"/>
         </DocumentType>
     </xsl:template>
 
-    <xsl:template match="v1:identifier">
-        <!-- No action -->
-    </xsl:template>
+    <xsl:template match="v1:identifier"/>
 
     <xsl:template match="v1:title">
         <Title>
             <xsl:value-of select="."/>
         </Title>
     </xsl:template>
+
+    <xsl:template match="v1:customizationId">
+        <Declaration type="xml.ubl">
+            <xsl:value-of select="concat(../v1:profileId, '#', .)"/>
+        </Declaration>
+    </xsl:template>
+
+    <xsl:template match="v1:profileId"/>
 
     <xsl:template match="v1:standardId">
         <Declaration>
@@ -69,7 +84,7 @@
 
     <xsl:template match="v1:file">
         <Filter>
-            <xsl:attribute name="type" select="'xml.schmeatron'"/>
+            <xsl:attribute name="type" select="'xml.schmeatron.xslt'"/>
             <xsl:attribute name="file" select="@path"/>
             <xsl:if test="@source">
                 <xsl:attribute name="source" select="@source"/>
@@ -82,6 +97,13 @@
             <xsl:attribute name="type" select="'xml.xslt'"/>
             <xsl:value-of select="."/>
         </Stylesheet>
+    </xsl:template>
+
+    <xsl:template match="v1:rule">
+        <Rule>
+            <xsl:attribute name="action" select="@action"/>
+            <xsl:attribute name="identifier" select="@identifier"/>
+        </Rule>
     </xsl:template>
 
 </xsl:stylesheet>

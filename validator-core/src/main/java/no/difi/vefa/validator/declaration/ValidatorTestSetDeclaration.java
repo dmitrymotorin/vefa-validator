@@ -2,7 +2,7 @@ package no.difi.vefa.validator.declaration;
 
 import no.difi.vefa.validator.api.DeclarationWithChildren;
 import no.difi.vefa.validator.api.Expectation;
-import no.difi.vefa.validator.api.ValidatorException;
+import no.difi.vefa.validator.lang.ValidatorException;
 import no.difi.vefa.validator.util.JAXBHelper;
 import no.difi.xsd.vefa.validator._1.Test;
 import no.difi.xsd.vefa.validator._1.TestSet;

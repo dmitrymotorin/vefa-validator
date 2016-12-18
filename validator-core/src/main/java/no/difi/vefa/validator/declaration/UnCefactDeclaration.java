@@ -1,6 +1,6 @@
 package no.difi.vefa.validator.declaration;
 
-import no.difi.vefa.validator.api.ValidatorException;
+import no.difi.vefa.validator.lang.ValidatorException;
 
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.events.Characters;
