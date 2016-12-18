@@ -29,6 +29,7 @@ public class Cli {
         options.addOption("s", "site", false, "Create site");
         options.addOption("b", "build", true, "Build identifier");
         options.addOption("n", "name", true, "Name");
+        options.addOption("m", "model", true, "Version of data model");
         options.addOption("w", "weight", true, "Weight");
         options.addOption("x", "exitcode", false, "Status in exit code");
         options.addOption("p", "profile", true, "Buildconfig profile");
