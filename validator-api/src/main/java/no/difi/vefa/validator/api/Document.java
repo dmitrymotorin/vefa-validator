@@ -8,9 +8,9 @@ import java.io.ByteArrayInputStream;
 public class Document {
 
     /**
-     * Document as #ByteArrayInputStream.
+     * Document content.
      */
-    private ByteArrayInputStream byteArrayInputStream;
+    private byte[] bytes;
 
     /**
      * Declaration identifier used to recognize rules.
@@ -23,12 +23,12 @@ public class Document {
     private Expectation expectation;
 
     /**
-     * @param inputStream InputStream containing the document used during validation.
+     * @param bytes InputStream containing the document used during validation.
      * @param declaration Declaration identifier used to recognize rules.
      * @param expectation Expectations when performing validation of triggered rules.
      */
-    public Document(ByteArrayInputStream inputStream, String declaration, Expectation expectation)  {
-        this.byteArrayInputStream = inputStream;
+    public Document(byte[] bytes, String declaration, Expectation expectation)  {
+        this.bytes = bytes;
         this.declaration = declaration;
         this.expectation = expectation;
     }
@@ -57,7 +57,10 @@ public class Document {
      * @return Validated document
      */
     public ByteArrayInputStream getInputStream() {
-        byteArrayInputStream.reset();
-        return byteArrayInputStream;
+        return new ByteArrayInputStream(bytes);
+    }
+
+    public byte[] getBytes() {
+        return bytes;
     }
 }

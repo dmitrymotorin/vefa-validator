@@ -75,8 +75,12 @@
             <groupId>no.difi.commons</groupId>
             <artifactId>commons-asic</artifactId>
         </dependency>
-        <dependency>
+        <!-- <dependency>
             <groupId>no.difi.commons</groupId>
+            <artifactId>commons-schematron</artifactId>
+        </dependency> -->
+        <dependency>
+            <groupId>com.github.difi.commons-libs</groupId>
             <artifactId>commons-schematron</artifactId>
         </dependency>
 

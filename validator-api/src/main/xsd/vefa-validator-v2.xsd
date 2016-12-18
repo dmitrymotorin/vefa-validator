@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           targetNamespace="http://difi.no/xsd/vefa/validator/2.0" xmlns="http://difi.no/xsd/vefa/validator/2.0">
+
+    <xs:element name="Definitions" type="DefinitionsType"/>
+
+    <xs:complexType name="DefinitionsType">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="Converter" type="ConverterType"/>
+            <xs:element name="DocumentType" type="DocumentTypeType"/>
+            <xs:element name="Extractor" type="ExtractorType"/>
+            <xs:element name="Filter" type="FilterType"/>
+            <xs:element name="Package" type="PackageType"/>
+            <xs:element name="Stylesheet" type="StylesheetType"/>
+            <xs:element name="TestFolder" type="TestFolderType"/>
+        </xs:choice>
+        <xs:attribute name="identifier" type="xs:string"/>
+        <xs:attribute name="timestamp" type="xs:long"/>
+        <xs:attribute name="type" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="PackageType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="build" type="xs:string"/>
+                <xs:attribute name="url" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="TestFolderType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string"/>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="DocumentTypeType">
+        <xs:sequence>
+            <xs:element name="Title" type="xs:string"/>
+            <xs:element name="Declaration" type="DeclarationType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Inherit" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Parameter" type="ParameterType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:choice minOccurs="0">
+                <xs:choice>
+                    <xs:element name="Converter" type="ConverterType"/>
+                    <xs:element name="ConverterReference" type="ConverterReferenceType"/>
+                </xs:choice>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:element name="Extractor" type="ExtractorType"/>
+                    <xs:element name="ExtractorReference" type="ExtractorReferenceType"/>
+                    <xs:element name="Filter" type="FilterType"/>
+                    <xs:element name="FilterReference" type="FilterReferenceType"/>
+                    <xs:element name="Stylesheet" type="StylesheetType"/>
+                    <xs:element name="StylesheetReference" type="StylesheetReferenceType"/>
+                </xs:choice>
+            </xs:choice>
+        </xs:sequence>
+        <xs:attribute name="identifier" type="xs:string" use="required"/>
+        <xs:attribute name="build" type="xs:string" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="AbstractArtifactType" abstract="true">
+
+    </xs:complexType>
+
+    <xs:complexType name="ArtifactDefinitionType" abstract="true">
+        <xs:complexContent>
+            <xs:extension base="AbstractArtifactType">
+                <xs:sequence>
+                    <xs:element name="Parameter" type="ParameterType" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="Extension" type="ExtensionType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="identifier" type="xs:string" use="optional"/>
+                <xs:attribute name="type" type="xs:string" use="required"/>
+                <xs:attribute name="file" type="xs:string" use="optional"/>
+                <xs:attribute name="build" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ArtifactReferenceType" abstract="true">
+        <xs:complexContent>
+            <xs:extension base="AbstractArtifactType">
+                <xs:attribute name="ref" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ConverterType">
+        <xs:complexContent>
+            <xs:extension base="ArtifactDefinitionType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ConverterReferenceType">
+        <xs:complexContent>
+            <xs:extension base="ArtifactReferenceType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ExtractorType">
+        <xs:complexContent>
+            <xs:extension base="ArtifactDefinitionType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ExtractorReferenceType">
+        <xs:complexContent>
+            <xs:extension base="ArtifactReferenceType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="FilterType">
+        <xs:complexContent>
+            <xs:extension base="ArtifactDefinitionType">
+                <xs:sequence>
+                    <xs:element name="Title" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="FilterReferenceType">
+        <xs:complexContent>
+            <xs:extension base="ArtifactReferenceType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="StylesheetType">
+        <xs:complexContent>
+            <xs:extension base="ArtifactDefinitionType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="StylesheetReferenceType">
+        <xs:complexContent>
+            <xs:extension base="ArtifactReferenceType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="DeclarationType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="identifier" type="xs:string" use="optional"/>
+                <xs:attribute name="type" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="ParameterType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="key" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="ExtensionType">
+        <xs:sequence>
+            <xs:any processContents="lax"/>
+        </xs:sequence>
+        <xs:attribute name="identifier" type="xs:string"/>
+    </xs:complexType>
+
+</xs:schema>

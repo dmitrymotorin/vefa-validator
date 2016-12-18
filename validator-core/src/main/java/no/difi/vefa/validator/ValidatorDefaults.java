@@ -6,6 +6,7 @@ import no.difi.vefa.validator.properties.SimpleProperties;
 /**
  * Class to hold defaults in validator.
  */
+@Deprecated
 class ValidatorDefaults {
 
     /**

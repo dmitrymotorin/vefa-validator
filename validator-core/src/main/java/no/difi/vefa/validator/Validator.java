@@ -22,6 +22,7 @@ import java.util.List;
  * <p/>
  * Validator is thread safe and should normally be created only once in a program.
  */
+@Deprecated
 public class Validator implements Closeable {
 
     /**

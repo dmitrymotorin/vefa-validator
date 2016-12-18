@@ -9,6 +9,7 @@ import java.nio.file.Path;
 /**
  * Defines a directories as source for validation artifacts.
  */
+@Deprecated
 public class DirectorySource extends AbstractSource {
 
     private Path[] directories;

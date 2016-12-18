@@ -21,6 +21,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
+@Deprecated
 abstract class AbstractSourceInstance implements SourceInstance, Closeable {
 
     private static Logger logger = LoggerFactory.getLogger(AbstractSourceInstance.class);

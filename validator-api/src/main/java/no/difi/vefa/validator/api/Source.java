@@ -3,6 +3,7 @@ package no.difi.vefa.validator.api;
 /**
  * Source for validation artifacts.
  */
+@Deprecated
 public interface Source {
 
     /**

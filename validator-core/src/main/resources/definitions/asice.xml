@@ -1,0 +1,16 @@
+<Definitions xmlns="http://difi.no/xsd/vefa/validator/2.0" identifier="library.asice">
+
+    <Package>ASiC-E</Package>
+
+    <DocumentType identifier="asice">
+        <Title>ASiC-E</Title>
+
+        <Declaration type="zip.asice">application/vnd.etsi.asic-e+zip</Declaration>
+
+        <Extractor type="zip">
+            <Parameter key="exclude">mimetype,META-INF/*</Parameter>
+        </Extractor>
+        <Filter type="asice"/>
+    </DocumentType>
+
+</Definitions>

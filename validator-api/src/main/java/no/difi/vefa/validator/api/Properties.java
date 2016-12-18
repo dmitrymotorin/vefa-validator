@@ -1,5 +1,6 @@
 package no.difi.vefa.validator.api;
 
+@Deprecated
 public interface Properties {
     boolean contains(String key);
 

@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * An implementation of ValidatorPlugin defines a set of resources needed by the validator to support validation of a given kind of document types.
  */
+@Deprecated
 public interface ValidatorPlugin {
 
     /**

@@ -1,0 +1,11 @@
+<Definitions xmlns="http://difi.no/xsd/vefa/validator/2.0" identifier="library.gzip">
+
+    <Package>Gzip</Package>
+
+    <DocumentType identifier="gzip">
+        <Title>Compressed file (Gzip)</Title>
+        <Declaration type="gzip">application/gzip</Declaration>
+        <Converter type="gzip"/>
+    </DocumentType>
+
+</Definitions>

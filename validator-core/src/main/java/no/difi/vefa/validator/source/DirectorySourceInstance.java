@@ -15,6 +15,7 @@ import java.nio.file.Path;
 /**
  * Defines a directory as source for validation artifacts.
  */
+@Deprecated
 class DirectorySourceInstance extends AbstractSourceInstance {
 
     /**

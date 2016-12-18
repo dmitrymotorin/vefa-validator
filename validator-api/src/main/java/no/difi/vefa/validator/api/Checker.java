@@ -7,6 +7,7 @@ import java.nio.file.Path;
  * <p/>
  * The constructor must contain no parameters.
  */
+@Deprecated
 public interface Checker extends Trigger {
     void prepare(Path path) throws ValidatorException;
 }

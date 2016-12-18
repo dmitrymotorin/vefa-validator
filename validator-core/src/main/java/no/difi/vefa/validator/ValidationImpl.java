@@ -102,22 +102,14 @@ class ValidationImpl implements Validation {
     }
 
     private void loadDocument(InputStream inputStream) throws ValidatorException, IOException {
-        ByteArrayInputStream byteArrayInputStream;
-        if (inputStream instanceof ByteArrayInputStream) {
-            // Use stream as-is.
-            byteArrayInputStream = (ByteArrayInputStream) inputStream;
-        } else {
-            // Convert stream to ByteArrayOutputStream
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            ByteStreams.copy(inputStream, byteArrayOutputStream);
-            byteArrayInputStream = new ByteArrayInputStream(byteArrayOutputStream.toByteArray());
-        }
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        ByteStreams.copy(inputStream, byteArrayOutputStream);
 
-        document = new Document(byteArrayInputStream, null, null);
+        document = new Document(byteArrayOutputStream.toByteArray(), null, null);
 
         // Read first 10kB for detections
         byte[] bytes = new byte[10 * 1024];
-        int length = byteArrayInputStream.read(bytes);
+        int length = document.getInputStream().read(bytes);
 
         if (length == -1)
             throw new IOException("Empty file");
@@ -141,12 +133,11 @@ class ValidationImpl implements Validation {
 
         if (declaration.supportsConverter()) {
             ByteArrayOutputStream convertedOutputStream = new ByteArrayOutputStream();
-            byteArrayInputStream.reset();
-            declaration.convert(byteArrayInputStream, convertedOutputStream);
+            declaration.convert(document.getInputStream(), convertedOutputStream);
 
-            document = new ConvertedDocument(new ByteArrayInputStream(convertedOutputStream.toByteArray()), byteArrayInputStream, declarationIdentifier.toString(), expectation);
+            document = new ConvertedDocument(convertedOutputStream.toByteArray(), document.getBytes(), declarationIdentifier.toString(), expectation);
         } else {
-            document = new Document(byteArrayInputStream, declarationIdentifier.toString(), expectation);
+            document = new Document(document.getBytes(), declarationIdentifier.toString(), expectation);
         }
     }
 

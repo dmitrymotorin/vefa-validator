@@ -5,6 +5,7 @@ import no.difi.xsd.vefa.validator._1.DeclarationType;
 import no.difi.xsd.vefa.validator._1.IdentifierType;
 import no.difi.xsd.vefa.validator._1.TriggerType;
 
+@Deprecated
 public class ConfigurationBuilder {
 
     public static ConfigurationBuilder identifier(String identifier) {

@@ -8,6 +8,7 @@ import java.util.List;
  * <p/>
  * Implementations in need of close() method should implement java.io.Closeable.
  */
+@Deprecated
 public interface SourceInstance {
 
     /**

@@ -10,6 +10,7 @@ import java.nio.file.Path;
  *
  * The constructor must contain no parameters.
  */
+@Deprecated
 public interface Renderer {
 
     /**

@@ -9,6 +9,7 @@ import java.net.URI;
 /**
  * Defines a repository as source for validation artifacts.
  */
+@Deprecated
 public class RepositorySource extends AbstractSource {
 
     public static RepositorySource forTest() {

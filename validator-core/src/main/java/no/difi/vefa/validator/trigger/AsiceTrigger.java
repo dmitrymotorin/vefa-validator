@@ -6,6 +6,7 @@ import no.difi.vefa.validator.api.*;
 import no.difi.xsd.asic.model._1.Certificate;
 import no.difi.xsd.vefa.validator._1.FlagType;
 
+@Deprecated
 @TriggerInfo("asice")
 public class AsiceTrigger implements Trigger {
 

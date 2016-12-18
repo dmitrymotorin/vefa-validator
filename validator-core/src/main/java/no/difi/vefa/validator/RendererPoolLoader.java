@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Pool of prepared renderers. Size if configured using properties.
  */
+@Deprecated
 class RendererPoolLoader extends CacheLoader<String, Renderer> {
 
     private static Logger logger = LoggerFactory.getLogger(RendererPoolLoader.class);

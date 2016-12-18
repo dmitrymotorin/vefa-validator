@@ -9,7 +9,7 @@ public class ConvertedDocumentTest {
 
     @Test
     public void simple() {
-        ConvertedDocument document = new ConvertedDocument(new ByteArrayInputStream(new byte[] {}), new ByteArrayInputStream(new byte[] {}), "identifier", null);
+        ConvertedDocument document = new ConvertedDocument(new byte[] {}, new byte[] {}, "identifier", null);
 
         Assert.assertNotNull(document.getInputStream());
         Assert.assertNotNull(document.getSource());

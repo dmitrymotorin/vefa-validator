@@ -2,6 +2,7 @@ package no.difi.vefa.validator.properties;
 
 import no.difi.vefa.validator.api.Properties;
 
+@Deprecated
 abstract class AbstractProperties implements Properties {
 
     @Override

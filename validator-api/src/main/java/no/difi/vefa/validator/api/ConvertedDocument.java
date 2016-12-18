@@ -10,16 +10,16 @@ public class ConvertedDocument extends Document {
     /**
      * Holding the original document.
      */
-    private ByteArrayInputStream source;
+    private byte[] source;
 
     /**
-     * @param inputStream InputStream containing the document used during validation.
+     * @param bytes InputStream containing the document used during validation.
      * @param source InputStream containing the original document before converting.
      * @param declaration Declaration identifier used to recognize rules.
      * @param expectation Expectations when performing validation of triggered rules.
      */
-    public ConvertedDocument(ByteArrayInputStream inputStream, ByteArrayInputStream source, String declaration, Expectation expectation) {
-        super(inputStream, declaration, expectation);
+    public ConvertedDocument(byte[] bytes, byte[] source, String declaration, Expectation expectation) {
+        super(bytes, declaration, expectation);
         this.source = source;
     }
 
@@ -29,6 +29,6 @@ public class ConvertedDocument extends Document {
      * @return Original document.
      */
     public ByteArrayInputStream getSource() {
-        return source;
+        return new ByteArrayInputStream(source);
     }
 }

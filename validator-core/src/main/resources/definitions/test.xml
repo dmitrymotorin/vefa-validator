@@ -1,0 +1,17 @@
+<Definitions xmlns="http://difi.no/xsd/vefa/validator/2.0" identifier="library.test">
+
+    <Package>VEFA Validator Testing</Package>
+
+    <DocumentType identifier="testset">
+        <Title>VEFA Validator Test Set</Title>
+        <Declaration type="xml">http://difi.no/xsd/vefa/validator/1.0::testSet</Declaration>
+        <Extractor type="testset"/>
+    </DocumentType>
+
+    <DocumentType identifier="test">
+        <Title>VEFA Validator Test</Title>
+        <Declaration type="xml">http://difi.no/xsd/vefa/validator/1.0::test</Declaration>
+        <Extractor type="test"/>
+    </DocumentType>
+    
+</Definitions>

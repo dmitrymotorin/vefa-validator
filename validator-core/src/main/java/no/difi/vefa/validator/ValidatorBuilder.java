@@ -16,6 +16,7 @@ import java.util.Set;
 /**
  * Builder supporting creation of validator.
  */
+@Deprecated
 public class ValidatorBuilder {
 
     private static Logger logger = LoggerFactory.getLogger(ValidatorBuilder.class);

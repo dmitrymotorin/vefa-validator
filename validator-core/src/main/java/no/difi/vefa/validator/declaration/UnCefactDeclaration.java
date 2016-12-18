@@ -10,7 +10,7 @@ import java.io.ByteArrayInputStream;
 import java.util.regex.Pattern;
 
 /**
- * Document declaration for OASIS Universal Business Language (UBL).
+ * Document declaration for UN/CEFACT.
  */
 public class UnCefactDeclaration extends AbstractXmlDeclaration {
 

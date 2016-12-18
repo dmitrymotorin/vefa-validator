@@ -20,6 +20,7 @@ import java.nio.file.Path;
 /**
  * Defines presenter for templates defined by XSLT.
  */
+@Deprecated
 @RendererInfo({".xsl", ".xslt"})
 public class XsltRenderer implements Renderer {
 

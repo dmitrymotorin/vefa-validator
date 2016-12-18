@@ -14,6 +14,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.util.Iterator;
 
+@Deprecated
 public class SbdhDeclaration extends AbstractXmlDeclaration implements DeclarationWithChildren {
 
     private static final String NAMESPACE = "http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader";

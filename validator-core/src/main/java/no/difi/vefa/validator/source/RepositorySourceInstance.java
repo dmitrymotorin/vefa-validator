@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import javax.xml.bind.Unmarshaller;
 import java.net.URI;
 
+@Deprecated
 class RepositorySourceInstance extends AbstractSourceInstance {
 
     private static Logger logger = LoggerFactory.getLogger(RepositorySourceInstance.class);

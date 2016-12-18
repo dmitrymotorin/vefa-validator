@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+@Deprecated
 @CheckerInfo({".xsd"})
 public class XsdChecker implements Checker {
 

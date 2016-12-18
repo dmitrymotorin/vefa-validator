@@ -9,7 +9,7 @@ public class DocumentTest {
 
     @Test
     public void simple() {
-        Document document = new Document(new ByteArrayInputStream(new byte[] {}), "identifier", null);
+        Document document = new Document(new byte[] {}, "identifier", null);
 
         Assert.assertNotNull(document.getInputStream());
         Assert.assertEquals(document.getDeclaration(), "identifier");

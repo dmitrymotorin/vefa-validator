@@ -9,6 +9,7 @@ import java.util.Map;
 /**
  * Simple implementation of Properties using a HashMap to store values.
  */
+@Deprecated
 public class SimpleProperties extends AbstractProperties {
 
     private static Logger logger = LoggerFactory.getLogger(SimpleProperties.class);

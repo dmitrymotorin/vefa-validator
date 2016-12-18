@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import java.util.HashMap;
 import java.util.Map;
 
+@Deprecated
 class TriggerFactory {
 
     private static Logger logger = LoggerFactory.getLogger(TriggerFactory.class);

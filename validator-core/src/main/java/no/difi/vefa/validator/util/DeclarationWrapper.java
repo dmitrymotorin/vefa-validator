@@ -65,20 +65,24 @@ public class DeclarationWrapper implements Declaration, DeclarationWithChildren,
         return declaration.expectations(content);
     }
 
+    @Deprecated
     public boolean supportsChildren() {
         return declaration instanceof DeclarationWithChildren;
     }
 
     @Override
+    @Deprecated
     public Iterable<InputStream> children(InputStream inputStream) throws ValidatorException {
         return ((DeclarationWithChildren) declaration).children(inputStream);
     }
 
+    @Deprecated
     public boolean supportsConverter() {
         return declaration instanceof DeclarationWithConverter;
     }
 
     @Override
+    @Deprecated
     public void convert(InputStream inputStream, OutputStream outputStream) throws ValidatorException {
         ((DeclarationWithConverter) declaration).convert(inputStream, outputStream);
     }

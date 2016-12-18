@@ -8,6 +8,7 @@ import java.lang.annotation.Target;
 /**
  * Annotation used to define file types used by an implementation of Presenter.
  */
+@Deprecated
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface RendererInfo {

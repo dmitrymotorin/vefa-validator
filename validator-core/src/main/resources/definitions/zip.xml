@@ -1,0 +1,9 @@
+<Definitions xmlns="http://difi.no/xsd/vefa/validator/2.0" identifier="library.zip">
+
+    <DocumentType identifier="zip">
+        <Title>Compressed file (Zip)</Title>
+        <Declaration type="zip">application/zip</Declaration>
+        <Extractor type="zip"/>
+    </DocumentType>
+
+</Definitions>

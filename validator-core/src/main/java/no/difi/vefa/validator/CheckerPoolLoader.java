@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Pool of prepared checkers. Size if configured using properties.
  */
+@Deprecated
 class CheckerPoolLoader extends CacheLoader<String, Checker> {
 
     private static Logger logger = LoggerFactory.getLogger(CheckerPoolLoader.class);
