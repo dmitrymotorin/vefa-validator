@@ -113,11 +113,7 @@ public class Builder {
                     for (String s : config.getCapabilities().split(","))
                         capabilities.add(s.trim());
 
-                if (config.getType() != null)
-                    configurations.setType(config.getType());
-
                 configurations.getPackage().addAll(config.getPackage());
-                configurations.getDependency().addAll(config.getDependency());
 
                 for (String testFolder : config.getTestfolder())
                     if (testFolder.equals("."))

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           targetNamespace="http://difi.no/xsd/vefa/validator/repository/2.0" xmlns="http://difi.no/xsd/vefa/validator/repository/2.0">
+
+    <xs:element name="Repository" type="RepositoryType"/>
+
+    <xs:complexType name="RepositoryType">
+        <xs:sequence>
+            <xs:element name="Package" type="PackageType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="updated" type="xs:long" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="PackageType">
+        <xs:sequence>
+            <xs:element name="Dependency" type="DependencyType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string"/>
+        <xs:attribute name="filename" type="xs:string"/>
+        <xs:attribute name="timestamp" type="xs:long" default="0"/>
+        <xs:attribute name="type" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="DependencyType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string"/>
+        </xs:simpleContent>
+    </xs:complexType>
+
+</xs:schema>

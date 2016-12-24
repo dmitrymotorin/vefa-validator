@@ -133,7 +133,7 @@
             <dependency>
                 <groupId>com.github.difi.commons-libs</groupId>
                 <artifactId>commons-schematron</artifactId>
-                <version>f92eebef8b</version>
+                <version>cc6635a41e</version>
             </dependency>
 
             <!-- Saxon -->
@@ -197,6 +197,11 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>20.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice</artifactId>
+                <version>4.1.0</version>
             </dependency>
 
             <!-- Typesafe -->

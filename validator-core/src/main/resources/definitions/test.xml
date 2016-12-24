@@ -13,5 +13,5 @@
         <Declaration type="xml">http://difi.no/xsd/vefa/validator/1.0::test</Declaration>
         <Extractor type="test"/>
     </DocumentType>
-    
+
 </Definitions>

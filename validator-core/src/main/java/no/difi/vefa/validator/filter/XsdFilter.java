@@ -1,6 +1,6 @@
 package no.difi.vefa.validator.filter;
 
-import no.difi.vefa.validator.api.Filter;
+import no.difi.vefa.validator.api.artifact.Filter;
 import no.difi.vefa.validator.util.AbstractArtifact;
 import no.difi.xsd.vefa.validator._2.FilterType;
 

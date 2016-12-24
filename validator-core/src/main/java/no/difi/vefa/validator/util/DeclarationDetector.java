@@ -5,6 +5,7 @@ import no.difi.vefa.validator.lang.ValidatorException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,6 +19,7 @@ public class DeclarationDetector {
 
     private List<DeclarationWrapper> rootDeclarationWrappers = new ArrayList<>();
 
+    @Inject
     public DeclarationDetector(Config config){
         Map<String, DeclarationWrapper> wrapperMap = new HashMap<>();
         for (String s : config.getObject("declaration").keySet()) {

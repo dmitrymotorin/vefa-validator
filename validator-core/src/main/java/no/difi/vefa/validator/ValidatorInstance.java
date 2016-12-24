@@ -23,6 +23,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Contains CheckerPools and Configuration, and is entry point for validation.
  */
+@Deprecated
 class ValidatorInstance implements Closeable {
 
     /**

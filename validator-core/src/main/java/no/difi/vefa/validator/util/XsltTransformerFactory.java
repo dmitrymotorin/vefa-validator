@@ -35,8 +35,9 @@ public class XsltTransformerFactory implements Closeable {
             jaxbContext = JAXBHelper.context(classes);
     }
 
-    public void load(String identifier, InputStream inputStream) throws SaxonApiException {
+    public XsltTransformerFactory load(String identifier, InputStream inputStream) throws SaxonApiException {
         executableMap.put(identifier, xsltCompiler.compile(new StreamSource(inputStream)));
+        return this;
     }
 
     public InputStream transform(String identifier, InputStream inputStream) throws SaxonApiException {
@@ -49,7 +50,7 @@ public class XsltTransformerFactory implements Closeable {
         xsltTransformer.close();
 
         byte[] result = destination.getXdmNode().toString().getBytes(StandardCharsets.UTF_8);
-        System.out.println(new String(result));
+        // System.out.println(new String(result));
         return new ByteArrayInputStream(result);
     }
 

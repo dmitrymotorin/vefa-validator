@@ -5,7 +5,9 @@
     <DocumentType identifier="gzip">
         <Title>Compressed file (Gzip)</Title>
         <Declaration type="gzip">application/gzip</Declaration>
-        <Converter type="gzip"/>
+        <ConverterReference ref="gzip-converter"/>
     </DocumentType>
+
+    <Converter identifier="gzip-converter" type="gzip"/>
 
 </Definitions>

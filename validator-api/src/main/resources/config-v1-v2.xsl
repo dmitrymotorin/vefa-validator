@@ -43,6 +43,12 @@
     <xsl:template match="v1:configuration">
         <DocumentType>
             <xsl:attribute name="identifier" select="v1:identifier"/>
+            <xsl:if test="@build">
+                <xsl:attribute name="build" select="@build"/>
+            </xsl:if>
+            <xsl:if test="@weight">
+                <xsl:attribute name="weight" select="@weight"/>
+            </xsl:if>
             <xsl:apply-templates select="v1:title | v1:customizationId | v1:standardId | v1:declaration | v1:inherit | v1:file | v1:stylesheet | v1:rule"/>
         </DocumentType>
     </xsl:template>
@@ -77,7 +83,7 @@
     </xsl:template>
 
     <xsl:template match="v1:inherit">
-        <Inherit>
+        <Inherit required="true">
             <xsl:value-of select="."/>
         </Inherit>
     </xsl:template>

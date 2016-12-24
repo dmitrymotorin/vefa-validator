@@ -1,0 +1,16 @@
+= VEFA Validator
+Direktoratet for forvaltning og IKT
+v3.0.0-SNAPSHOT
+:description: ...
+:doctype: book
+:icons: font
+:toc: left
+:toclevels: 2
+:source-highlighter: coderay
+:source-language: xml
+:sectanchors:
+:sectnums:
+
+{description}
+
+== Introduction

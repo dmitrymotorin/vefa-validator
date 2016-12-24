@@ -7,10 +7,14 @@
 
         <Declaration type="zip.asice">application/vnd.etsi.asic-e+zip</Declaration>
 
-        <Extractor type="zip">
-            <Parameter key="exclude">mimetype,META-INF/*</Parameter>
-        </Extractor>
-        <Filter type="asice"/>
+        <FilterReference ref="asic-filter"/>
+        <ExtractorReference ref="asic-extractor"/>
     </DocumentType>
+
+    <Filter identifier="asic-filter" type="asic"/>
+
+    <Extractor identifier="asic-extractor" type="zip">
+        <Parameter key="exclude">mimetype,META-INF/*</Parameter>
+    </Extractor>
 
 </Definitions>

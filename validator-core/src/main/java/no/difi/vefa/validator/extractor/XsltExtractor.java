@@ -1,6 +1,6 @@
 package no.difi.vefa.validator.extractor;
 
-import no.difi.vefa.validator.api.Extractor;
+import no.difi.vefa.validator.api.artifact.Extractor;
 import no.difi.vefa.validator.lang.ArtifactException;
 import no.difi.vefa.validator.util.AbstractXsltArtifact;
 import no.difi.xsd.vefa.validator._2.ExtractorType;

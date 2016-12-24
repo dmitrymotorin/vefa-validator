@@ -13,7 +13,7 @@ public class DefinitionsParser {
     static {
         try {
             xsltTransformerFactory = XsltTransformerFactory.newFactory(DefinitionsType.class);
-            xsltTransformerFactory.load("v1-to-v2", DefinitionsParser.class.getResourceAsStream("/v1-to-v2.xsl"));
+            xsltTransformerFactory.load("v1-to-v2", DefinitionsParser.class.getResourceAsStream("/src/main/resources/config-v1-v2.xsl"));
         } catch (Exception e) {
             throw new IllegalStateException(e.getMessage(), e);
         }

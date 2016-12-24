@@ -1,4 +1,4 @@
-package no.difi.vefa.validator.filesystem;
+package no.difi.vefa.validator.storage;
 
 import no.difi.asic.AsicReader;
 import no.difi.asic.AsicReaderFactory;
@@ -10,20 +10,22 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-public class ValidatorArtifact implements Closeable {
+public class StoragePackage implements Closeable {
 
     private final static Pattern PATTERN_CONFIG = Pattern.compile("^config\\-.+\\.xml");
 
-    private AsicReaderFactory asicReaderFactory = AsicReaderFactory.newFactory();
+    private final static AsicReaderFactory ASIC_READER_FACTORY = AsicReaderFactory.newFactory();
 
-    private String identifier;
-    private long timestamp;
+    private final String identifier;
+
+    private final long timestamp;
 
     private Map<String, byte[]> files = new HashMap<>();
+
     private DefinitionsType definitions;
 
-    public ValidatorArtifact(InputStream inputStream) throws IOException {
-        AsicReader asicReader = asicReaderFactory.open(inputStream);
+    public StoragePackage(InputStream inputStream) throws IOException {
+        AsicReader asicReader = ASIC_READER_FACTORY.open(inputStream);
 
         String filenameConfig = null;
 
@@ -56,11 +58,14 @@ public class ValidatorArtifact implements Closeable {
 
     @Override
     public String toString() {
-        return String.format("ValidatorArtifact[ %s / %s / %s files ]", identifier, timestamp, files.size());
+        return String.format("StoragePackage[ %s / %s / %s files ]", identifier, timestamp, files.size());
     }
 
     @Override
     public void close() throws IOException {
         files.clear();
+        files = null;
+
+        definitions = null;
     }
 }

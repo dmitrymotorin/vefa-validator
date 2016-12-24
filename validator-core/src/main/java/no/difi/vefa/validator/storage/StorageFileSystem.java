@@ -1,4 +1,7 @@
-package no.difi.vefa.validator.filesystem;
+package no.difi.vefa.validator.storage;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.file.*;
@@ -6,31 +9,34 @@ import java.nio.file.attribute.UserPrincipalLookupService;
 import java.nio.file.spi.FileSystemProvider;
 import java.util.Set;
 
-public class ValidatorFileSystem extends FileSystem {
+public class StorageFileSystem extends FileSystem {
 
-    @Override
-    public FileSystemProvider provider() {
-        return null;
+    private static Logger logger = LoggerFactory.getLogger(StorageFileSystem.class);
+
+    private StorageFileSystemProvider storageFileSystemProvider;
+
+    public StorageFileSystem(StorageFileSystemProvider storageFileSystemProvider) {
+        this.storageFileSystemProvider = storageFileSystemProvider;
     }
 
     @Override
-    public void close() throws IOException {
-
+    public FileSystemProvider provider() {
+        return storageFileSystemProvider;
     }
 
     @Override
     public boolean isOpen() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isReadOnly() {
-        return false;
+        return true;
     }
 
     @Override
     public String getSeparator() {
-        return null;
+        return "/";
     }
 
     @Override
@@ -50,7 +56,8 @@ public class ValidatorFileSystem extends FileSystem {
 
     @Override
     public Path getPath(String first, String... more) {
-        return null;
+        logger.info("{} {}", first, more);
+        return new StoragePath(this);
     }
 
     @Override
@@ -66,5 +73,10 @@ public class ValidatorFileSystem extends FileSystem {
     @Override
     public WatchService newWatchService() throws IOException {
         return null;
+    }
+
+    @Override
+    public void close() throws IOException {
+        storageFileSystemProvider = null;
     }
 }

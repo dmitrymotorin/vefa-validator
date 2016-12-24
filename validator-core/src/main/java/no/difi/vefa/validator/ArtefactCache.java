@@ -3,22 +3,23 @@ package no.difi.vefa.validator;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
+import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.typesafe.config.Config;
 import no.difi.vefa.validator.util.AbstractArtifact;
 
+import javax.inject.Inject;
 import java.util.concurrent.TimeUnit;
 
-public class ArtifactCache extends CacheLoader<String, AbstractArtifact> {
+public class ArtefactCache extends CacheLoader<String, AbstractArtifact> {
 
-    private DefinitionRepository definitionRepository;
-    private Config config;
+    private ArtefactFactory artefactFactory;
 
     private LoadingCache<String, AbstractArtifact> cache;
 
-    public ArtifactCache(DefinitionRepository definitionRepository, Config config) {
-        this.definitionRepository = definitionRepository;
-        this.config = config;
+    @Inject
+    public ArtefactCache(ArtefactFactory artefactFactory, Config config) {
+        this.artefactFactory = artefactFactory;
 
         this.cache = CacheBuilder.newBuilder()
                 .refreshAfterWrite(5, TimeUnit.MINUTES)
@@ -34,6 +35,6 @@ public class ArtifactCache extends CacheLoader<String, AbstractArtifact> {
 
     @Override
     public ListenableFuture<AbstractArtifact> reload(String key, AbstractArtifact oldValue) throws Exception {
-        return super.reload(key, oldValue);
+        return Futures.immediateFuture(load(key));
     }
 }

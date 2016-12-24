@@ -22,6 +22,7 @@ import java.util.*;
  * This class handles all raw configurations detected in source of validation artifacts and preserves links
  * between source and configurations.
  */
+@Deprecated
 class ValidatorEngine implements Closeable {
 
     /**

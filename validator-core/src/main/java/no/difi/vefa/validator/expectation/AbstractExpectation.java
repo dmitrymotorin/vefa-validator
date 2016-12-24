@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public abstract class AbstractExpectation implements Expectation {
+abstract class AbstractExpectation implements Expectation {
 
     protected String description;
     protected List<String> scopes = new ArrayList<>();

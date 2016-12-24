@@ -1,0 +1,1 @@
+Documentation is generated using [Asciidoctor](http://asciidoctor.org/). ```main.adoc``` is main file used for generation of documentation.

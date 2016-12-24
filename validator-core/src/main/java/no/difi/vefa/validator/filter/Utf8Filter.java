@@ -1,0 +1,14 @@
+package no.difi.vefa.validator.filter;
+
+import no.difi.vefa.validator.api.artifact.Filter;
+import no.difi.vefa.validator.util.AbstractArtifact;
+import no.difi.xsd.vefa.validator._2.FilterType;
+
+import java.nio.file.Path;
+
+public class Utf8Filter extends AbstractArtifact<FilterType> implements Filter {
+
+    public Utf8Filter(FilterType definition, Path folder) {
+        super(definition, folder);
+    }
+}

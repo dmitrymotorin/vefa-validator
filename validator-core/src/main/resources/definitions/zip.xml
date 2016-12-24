@@ -3,7 +3,9 @@
     <DocumentType identifier="zip">
         <Title>Compressed file (Zip)</Title>
         <Declaration type="zip">application/zip</Declaration>
-        <Extractor type="zip"/>
+        <ExtractorReference ref="zip-extractor"/>
     </DocumentType>
+
+    <Extractor identifier="zip-extractor" type="zip"/>
 
 </Definitions>

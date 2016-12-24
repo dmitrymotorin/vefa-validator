@@ -1,7 +1,7 @@
 package no.difi.vefa.validator.converter;
 
 import com.google.common.io.ByteStreams;
-import no.difi.vefa.validator.api.Converter;
+import no.difi.vefa.validator.api.artifact.Converter;
 import no.difi.vefa.validator.util.AbstractArtifact;
 import no.difi.xsd.vefa.validator._2.ConverterType;
 

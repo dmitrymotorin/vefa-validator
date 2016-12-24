@@ -17,7 +17,7 @@ public class DefinitionsPreparer {
     }
 
     private DefinitionsPreparer() throws SaxonApiException {
-        xsltTransformerFactory.load("v1-to-v2", getClass().getResourceAsStream("/v1-to-v2.xsl"));
+        xsltTransformerFactory.load("v1-to-v2", getClass().getResourceAsStream("/src/main/resources/config-v1-v2.xsl"));
     }
 
     public DefinitionsPreparer load(InputStream inputStream) throws SaxonApiException, JAXBException {

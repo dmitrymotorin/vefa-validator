@@ -41,15 +41,13 @@
         <xs:sequence>
             <xs:element name="Title" type="xs:string"/>
             <xs:element name="Declaration" type="DeclarationType" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="Inherit" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Inherit" type="InheritType" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="Parameter" type="ParameterType" minOccurs="0" maxOccurs="unbounded"/>
             <xs:choice minOccurs="0">
                 <xs:choice>
-                    <xs:element name="Converter" type="ConverterType"/>
                     <xs:element name="ConverterReference" type="ConverterReferenceType"/>
                 </xs:choice>
                 <xs:choice maxOccurs="unbounded">
-                    <xs:element name="Extractor" type="ExtractorType"/>
                     <xs:element name="ExtractorReference" type="ExtractorReferenceType"/>
                     <xs:element name="Filter" type="FilterType"/>
                     <xs:element name="FilterReference" type="FilterReferenceType"/>
@@ -67,6 +65,7 @@
         <xs:sequence>
             <xs:element name="Rule" type="RuleType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
+        <xs:attribute name="weight" type="xs:int" use="optional"/>
     </xs:complexType>
 
     <xs:complexType name="ArtifactDefinitionType" abstract="true">
@@ -81,6 +80,7 @@
                 <xs:attribute name="type" type="xs:string" use="required"/>
                 <xs:attribute name="file" type="xs:string" use="optional"/>
                 <xs:attribute name="build" type="xs:string" use="optional"/>
+                <xs:attribute name="timestamp" type="xs:string" use="optional"/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -157,6 +157,14 @@
         <xs:simpleContent>
             <xs:extension base="xs:string">
                 <xs:attribute name="key" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="InheritType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="required" type="xs:boolean" use="required"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>

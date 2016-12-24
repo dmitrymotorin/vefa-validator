@@ -1,6 +1,6 @@
 package no.difi.vefa.validator.converter;
 
-import no.difi.vefa.validator.api.Converter;
+import no.difi.vefa.validator.api.artifact.Converter;
 import no.difi.vefa.validator.lang.ArtifactException;
 import no.difi.vefa.validator.util.AbstractXsltArtifact;
 import no.difi.xsd.vefa.validator._2.ConverterType;
