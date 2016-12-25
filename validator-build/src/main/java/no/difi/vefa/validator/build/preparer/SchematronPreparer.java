@@ -25,7 +25,7 @@ public class SchematronPreparer implements Preparer {
 
     public ByteArrayOutputStream prepare(Build build, File file) throws Exception {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        schematronCompiler.transform(file, byteArrayOutputStream);
+        schematronCompiler.compile(file, byteArrayOutputStream);
         return byteArrayOutputStream;
     }
 }

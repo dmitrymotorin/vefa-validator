@@ -67,10 +67,6 @@ public class Repo {
                         artifactType.setFilename(parentString.substring(parentString.lastIndexOf("/") + 1));
                         // Fetch timestamp of creation.
                         artifactType.setTimestamp(configurations.getTimestamp());
-                        // Type of artifact
-                        artifactType.setType(configurations.getType());
-                        // Add dependencies.
-                        artifactType.getDependency().addAll(configurations.getDependency());
                         // Add artifact to list of artifacts.
                         artifactsTypes.add(artifactType);
                     } catch (JAXBException e) {
