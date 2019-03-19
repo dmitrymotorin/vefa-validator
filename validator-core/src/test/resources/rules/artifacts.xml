@@ -3,4 +3,12 @@
     <artifact filename="ehf-79b2def888aba2a33ccc7606c4b39f5448c3585e.asice" timestamp="1461934273385"/>
     <artifact filename="ehf-stylesheet-1c573960978491dff855ae35ec28b582de2405e2.asice" timestamp="1456308020548"/>
     <artifact filename="ubl21-d6122e53220eb8e2732ef0d0c7474b21.asice" timestamp="1440675269967"/>
+    <artifact name="ehf-stylesheet" filename="ehf-stylesheet-9c9a4c4944c4857fa0f45af76bc3aa59c95f551a.asice" timestamp="1463993126830"/>
+    <artifact name="eu.peppol.postaward.ver20" filename="eu.peppol.postaward.ver20-e5085a49db8fcf702be9109bf932295f4e838275.asice" timestamp="1509121972509"/>
+    <artifact name="no.difi.ehf.postaward" filename="no.difi.ehf.postaward-c7614044-8ee5-41e5-ae83-8f22e2381111.asice" timestamp="1542278278530"/>
+    <artifact name="org.oasis-open.ubl.ver20" filename="org.oasis-open.ubl.ver20-d9033aac7f4789738ac01202bb915983b32c5bb1.asice" timestamp="1544635930975"/>
+    <artifact name="org.oasis-open.ubl.ver21" filename="org.oasis-open.ubl.ver21-d9033aac7f4789738ac01202bb915983b32c5bb1.asice" timestamp="1544635932784"/>
+    <artifact name="org.oasis-open.ubl.ver22" filename="org.oasis-open.ubl.ver22-d9033aac7f4789738ac01202bb915983b32c5bb1.asice" timestamp="1544635934549"/>
+    <artifact name="org.unece.uncefact.d16b.cii" filename="org.unece.uncefact.d16b.cii-8391da71ed54dc5264fd4101a64b8ce2ac53f52d.asice" timestamp="1545149355795"/>
+    <artifact name="eu.peppol.postaward.v3.billing" filename="eu.peppol.postaward.v3.billing-bf35edb3-1b61-4c55-8b38-dd169e5cebb2.asice" timestamp="1545149355795"/>
 </artifacts>
